@@ -1,3 +1,9 @@
-# To do list
+# Task list
 
-To do list made with Javascript.
+Task list made with Javascript.
+
+### Info
+
+- [x] Implement better animations
+- [x] Read data from file with a simple local http server
+- [ ] Integrate with real (local) server requests
