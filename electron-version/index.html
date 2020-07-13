@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task List</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+
+	body {
+		margin: 0;
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		user-select: none;
+	}
+
+	#task-container {
+		background-color: #ecf0f1;
+		width: 450px;/*30%;*/
+		height: 500px;
+		border: 1px solid #bdc3c7;
+		border-radius: 10px;
+	}
+
+	#header {
+		background-color: #bdc3c7;
+		padding: 10px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 15px;
+	}
+
+	#header > input {
+		width: 70%;
+		height: 30px;
+		border-radius: 10px;
+		border: 2px solid #7f8c8d;
+		outline: none;
+		font-size: 15px;
+		transition: border-color 0.5s;
+
+	}
+
+	#add-task-btn {
+		border-radius: 20px;
+		border: 2px solid #2ecc71;
+		background-color: #fff;
+		color: #2ecc71;
+		width: 50px;
+		height: 30px;
+		font-size: 30px;
+		text-align: center;
+		margin-left: auto;
+		transition: background-color 0.3s, color 0.3s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		font-weight: 900;
+	}
+
+	#add-task-btn:hover {
+		color: #fff;
+		background-color: #2ecc71;
+	}
+
+	#task-content {
+		overflow-y: scroll;
+		height: 80%;
+		scrollbar-width: thin;
+	}
+
+	#task-content::-webkit-scrollbar {
+	  width: 5px;
+	}
+	#task-content::-webkit-scrollbar-track {
+	  background: inherit;
+	}
+	#task-content::-webkit-scrollbar-thumb {
+	  background-color: #bdc3c7;
+	}
+	#task-content::-webkit-scrollbar-thumb:hover {
+	  background-color: #95a5a6;
+	}
+
+	.task {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 20px;
+		font-family: Verdana, sans-serif;
+		transition: background-color 0.25s, opacity 1s;
+	}
+
+	.task:hover {
+		background-color: #bdc3c7;
+	}
+
+	.task > .task-desc-holder {
+		color: #2d3436;
+		width: 300px;
+		height: 50px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		white-space: nowrap;
+		display: flex;
+		align-items: center;
+	}
+
+	.task > .del-task {
+		margin-left: auto;
+		margin-right: 10px;
+		border: 1px solid #e74c3c;
+		color: #e74c3c;
+		background-color: #fff;
+		width: 30px;
+		height: 20px;
+		border-radius: 30px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: background-color 0.2s, color 0.2s;
+
+	}
+
+	.task > .del-task:hover {
+		color: #fff;
+		background-color: #e74c3c;
+	}
+
+	.task > .task-comp-btn {
+		width: 10px;
+		height: 10px;
+		-webkit-appearance: none;
+		appearance: none;
+		margin: 0px 10px;
+		outline: 1px solid #34495e;
+		-moz-outline-radius: 2px;
+		-webkit-outline-radius: 2px;
+		outline-radius: 2px;
+		cursor: pointer;
+	}
+
+	.task > .task-comp-btn:checked {
+
+		background-color: #34495e;
+	}
+
+	nav {
+		border-top-right-radius: 8px;
+		border-top-left-radius: 8px;
+		-webkit-app-region: drag;
+		background-color: #ecf0f1;
+		width: 100%;
+	}
+
+	nav > div {
+		margin-left: 10px;
+	}
+	.nav-button {
+		width: 30px;
+		height: 15px;
+		border: none;
+		border-radius: 3px;
+		margin: 5px 0px;
+		display: inline-block;
+		margin-right: 5px;
+		-webkit-app-region: no-drag;
+		outline: none;
+		cursor: pointer;
+	}
+
+	#close-btn {
+		background-color: #e74c3c;
+	}
+
+	#close-btn:hover {
+		background-color: #c0392b;
+	}
+
+	#save-btn {
+		background-color: #2ecc71;
+	}
+
+	#save-btn:hover {
+		background-color: #27ae60;
+	}
+
+
+</style>
+<body>
+	<div id="task-container">
+		<nav>
+			<div>
+				<button id="save-btn" class="nav-button" onclick="saveTasks()"></button>
+				<button id="close-btn" class="nav-button" onclick="closeWindow()"></button>
+			</div>
+		</nav>
+		<div id="header">
+			<input type="text" name="taskName" id="new-task">
+			<span id="add-task-btn">+</span>
+		</div>
+		<div id="task-content"></div>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "app",
+  "version": "2.0.0",
+  "description": "Desktop task list",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Augusto Frade",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.1.0"
+  }
+}
